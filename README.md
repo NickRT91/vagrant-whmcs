@@ -2,7 +2,7 @@
 Vagrant/Puppet configuration for WHMCS 6 installation
 
 Based on CentOS 6.5 <br/>
-https://dl.dropbox.com/s/3fgr7lbvcpn51py/centos_6-5_i386.box
+https://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.5-i386-v20140311.box
 
 Default settings:
 <ul>
@@ -10,9 +10,10 @@ Default settings:
     <li>1CPU</li>
 </ul>
 
-Clone repo to location<br/>
+# Installation
+Clone repo to project folder<br/>
 ```
-$git clone https://github.com/nem-c/whmcs6-vagrant-puppet.git whmcs
+$git clone https://github.com/WEBIDIA/webidia-vagrant-whmcs .
 ```
 If you want to use root login without password, create authorized_keys file in puppet/modules/users/files/authorized_keys
 
@@ -34,19 +35,20 @@ You will have to add
 ```
 To your hosts file in order to easily access it from browser.
 
-When your WHMCS code is in place, just follow installation guideline, and in about 30 seconds you should be ready.
 
-Using Sequel Pro connect via SSH with the following settings:
+Connect to the mySQL database via SSH using software like Sequel Pro using the following settings:
 ```json
 {
-    mySQL host: "127.0.0.1"
+    mySQL_host: "127.0.0.1"
     username: "whmcs"
     password: "whmcs"
     database_name: "whmcs_db"
-    SSH host: "whmcs.dev"
-    SSH User: "vagrant"
-    SSH Password "vagrant"
+    SSH_host: "whmcs.dev"
+    SSH_User: "vagrant"
+    SSH_Password "vagrant"
 }
+```
 
-WHMCS code is not included and you can aquire your version on https://www.whmcs.com, where you can also receive
-developers license
+Download the latest version of WHMCS from http://whmcs.com 
+
+Installation instructions can be found at http://docs.whmcs.com/Installing_WHMCS#Installing_WHMCS
