@@ -1,6 +1,8 @@
 # WHMCS Vagrant
 A vagrant/puppet configuration to easily provision a local development environment for use with WHMCS.
 
+Forked from https://github.com/nem-c/whmcs6-vagrant-puppet
+
 Based on CentOS 6.5<br/>
 https://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.5-i386-v20140311.box
 
