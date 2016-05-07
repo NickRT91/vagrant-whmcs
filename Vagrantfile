@@ -6,11 +6,12 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.box = "etlwhmcs"
-    config.vm.box_url = "https://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.5-i386-v20140311.box"
+    config.vm.box_url = "https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box"
     config.vm.box_check_update = false
     config.vm.hostname = "whmcs.dev"
 
     config.vm.synced_folder "whmcs/", "/var/www/public_html/whmcs", :owner => "vagrant"
+    config.vm.synced_folder "./", "/var/www", owner: "vagrant", group: "www-data"
 
     config.vm.provider "virtualbox" do |v|
         v.name = "whmcs.dev"
@@ -27,4 +28,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network "private_network", ip: "192.168.56.101"
 
     config.ssh.forward_agent = true
+
 end
