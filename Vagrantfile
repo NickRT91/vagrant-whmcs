@@ -5,8 +5,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-    config.vm.box = "webidia-whmcs"
-    config.vm.box_url = "http://download.parallels.com/desktop/vagrant/centos64.box"
+    config.vm.box = "etlwhmcs"
+    config.vm.box_url = "https://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.5-i386-v20140311.box"
     config.vm.box_check_update = false
     config.vm.hostname = "whmcs.dev"
 
@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         v.memory = 1024
         v.cpus = 1
     end
-
+    
     config.vm.provision "puppet" do |puppet|
         puppet.manifests_path = "puppet/manifests"
         puppet.manifest_file  = "default.pp"

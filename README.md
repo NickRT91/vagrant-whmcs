@@ -36,14 +36,17 @@ To your hosts file in order to easily access it from browser.
 
 When your WHMCS code is in place, just follow installation guideline, and in about 30 seconds you should be ready.
 
-Database details required are:
+Using Sequel Pro connect via SSH with the following settings:
 ```json
 {
+    mySQL host: "127.0.0.1"
     username: "whmcs"
     password: "whmcs"
     database_name: "whmcs_db"
+    SSH host: "whmcs.dev"
+    SSH User: "vagrant"
+    SSH Password "vagrant"
 }
-```
 
 WHMCS code is not included and you can aquire your version on https://www.whmcs.com, where you can also receive
 developers license
