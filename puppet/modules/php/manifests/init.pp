@@ -49,8 +49,7 @@ class php {
   file { "/var/lib/php/session" :
       owner  => "root",
       group  => "vagrant",
-      mode   => 0770,
-      require => Package["php"],
+      mode   => 0770
   }
 
 }
