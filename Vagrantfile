@@ -11,7 +11,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.hostname = "whmcs.dev"
 
     config.vm.synced_folder "whmcs/", "/var/www/public_html/whmcs", :owner => "vagrant"
-    config.vm.synced_folder "./", "/var/www", owner: "vagrant", group: "www-data"
 
     config.vm.provider "virtualbox" do |v|
         v.name = "whmcs.dev"
