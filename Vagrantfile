@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.box = "webidia-whmcs"
-    config.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box"
+    config.vm.box_url = "http://download.parallels.com/desktop/vagrant/centos64.box"
     config.vm.box_check_update = false
     config.vm.hostname = "whmcs.dev"
 
