@@ -49,3 +49,14 @@ class httpd {
     notify  => Service["httpd"]
   }
 }
+
+class apache {
+
+  # turn off EnableSendfile
+  exec { "disable-apache-sendfile":
+    command => "echo 'EnableSendfile Off' >> /vagrant/puppet/modules/httpd/files/httpd.conf",
+    unless => "grep '^EnableSendfile Off' /vagrant/puppet/modules/httpd/files/httpd.conf",
+    require => File["/vagrant/puppet/modules/httpd/files/httpd.conf"]
+  }
+
+}
