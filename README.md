@@ -35,18 +35,6 @@ If not you may need to manually add the following to your hosts file
 192.168.56.101 whmcs.dev www.whmcs.dev
 ```
 
-Once setup is complete you will need to connect to the machine to fix the folder permissions:
-
-```
-vagrant ssh
-```
-
-Fix permissions with the PHP session folder:
-
-```
-sudo chmod 1777 /var/lib/php/session
-```
-
 # Database
 Connect to the mySQL database via SSH using software like Sequel Pro using the following settings:
 ```json
